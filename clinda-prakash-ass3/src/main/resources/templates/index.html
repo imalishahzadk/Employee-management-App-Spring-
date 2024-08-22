@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Employee List</title>
+</head>
+
+<body>
+    <h1>Employees</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Designation</th>
+                <th>Hiring Date</th>
+                <th>Active Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="employee : ${employees}">
+                <td th:text="${employee.id}"></td>
+                <td th:text="${employee.name}"></td>
+                <td th:text="${employee.designation}"></td>
+                <td th:text="${employee.hiringdate}"></td>
+                <td th:text="${employee.active_status} ? 'Active' : 'Inactive'"></td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="/employee.html">Create New Employee</a>
+</body>
+
+</html>

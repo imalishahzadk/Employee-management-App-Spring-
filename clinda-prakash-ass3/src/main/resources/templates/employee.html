@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Employee Form</title>
+</head>
+
+<body>
+    <h1>Create Employee</h1>
+    <form th:action="@{/api/employees}" th:object="${employee}" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" th:field="*{name}" />
+        <label for="designation">Designation:</label>
+        <input type="text" id="designation" th:field="*{designation}" />
+        <label for="hiringdate">Hiring Date:</label>
+        <input type="text" id="hiringdate" th:field="*{hiringdate}" />
+        <label for="active_status">Active:</label>
+        <input type="checkbox" id="active_status" th:field="*{active_status}" />
+        <button type="submit">Submit</button>
+    </form>
+    <a href="/index.html">Back to List</a>
+</body>
+
+</html>
